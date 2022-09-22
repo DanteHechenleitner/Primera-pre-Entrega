@@ -492,6 +492,17 @@ body {
     box-shadow: 0 0 2px 4px #9C9D9C;
   }
 }
+/* Agregamos una clase para el mensaje de error en el formulario*/
+.mensajeError small {
+  color: #e74c3c;
+  position: absolute;
+  visibility: hidden;
+}
+
+.mensajeError.Visible small {
+  visibility: visible;
+}
+
 @media screen and (min-width: 1000px) {
   .arcos_logo, #arcos_2, #arcos_1 {
     -webkit-animation-name: mover;
