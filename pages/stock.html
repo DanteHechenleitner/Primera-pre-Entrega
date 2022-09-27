@@ -157,6 +157,14 @@
     <section class="bg-light p-5">
         <h3 class="pb-2">STOCK ACTUALIZADO</h3>
         <div class="table-responsive" id="no-more-tables">
+
+            <div clas="col-md-1">
+                <button type="button" class="btn btn-outline-primary col-md-1" id="ver" >
+                    VER
+                </button>
+            </div>
+
+
             <table class="table bg-white">
                 <thead class="bg-dark text-light">
                     <tr>
@@ -169,7 +177,8 @@
                         <th scope="col">Subtotal</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tdbody">
+                    <!-- Modal 
                     <tr>
                         <td data-title="#">1</td>
                         <td data-title="Codigo">K-1496</td>
@@ -215,6 +224,7 @@
                         <td data-title="IVA">10.5%</td>
                         <td data-title="Subtotal">$ 4698.52</td>
                     </tr>
+                    -->
                 </tbody>
             </table>
         </div>
@@ -235,6 +245,7 @@
         </ul>
         
     </footer>
+    <script src="../clase11.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
