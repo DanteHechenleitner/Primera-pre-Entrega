@@ -112,27 +112,23 @@ function agregarProductos(){
 
 /// tengo que recorrer lo que esta guardado en el storage para despues poder filtrar los productos
 
-fetch("./data.json")
+let  datos = fetch("../data.json")
 .then((respuesta) => respuesta.json())
 .then((json) => console.log(json));
 
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-.then((respuesta) => respuesta.json())
-.then((json) => console.log(json))
 
 
-
-/*function recorerStock(){
+function recorerStock(){
     ///let db = JSON.parse(localStorage.getItem("Producto"));
     let tdbody = document.getElementById("tdbody");
     ///console.log(db);
 
-    fetch("./data.json")
+    fetch("../data.json")
     .then(respuesta => respuesta.json())
     .then(productos => {
         tdbody.innerHTML = ""
-        productos.forEach( db => {
+        productos.forEach( productos => {
             let td = document.createElement("tr")
             td.innerHTML = `
             <td data-title="#"> ${productos.id}</td>
@@ -145,6 +141,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
             tdbody.appendChild(td)
         })
     })
+    .catch(producto => alertStorageVacio() )
 
     /*tdbody.innerHTML = ""
 
@@ -163,9 +160,9 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     }else if (db == null){
         return alertStorageVacio()
         
-    }
+    }*/
    
-}*/
+}
 
 // JS Librerias
 
@@ -182,7 +179,7 @@ function alertStorageVacio(){
 
 guardarProducto != null && guardarProducto.addEventListener("click", agregarProductos);
 
-//verStock != null && verStock.addEventListener("click", recorerStock);
+verStock != null && verStock.addEventListener("click", recorerStock);
 
 
 
