@@ -74,10 +74,10 @@ function agregarProductos(){
 
 
     if(codigo.value == "" || producto.value == "" || cantidad.value == "" || precio.value == ""){
-        validarHtml(codigo)
-        validarHtml(producto)
-        validarHtml(cantidad)
-        validarHtml(precio)
+        validarHtml(codigo);
+        validarHtml(producto);
+        validarHtml(cantidad);
+        validarHtml(precio);
 
     }else if(productosEnStorage == null){
         validarHtml(codigo);
@@ -86,22 +86,22 @@ function agregarProductos(){
         validarHtml(precio);
         const nuevoProducto = new Productos(id, codigo.value, producto.value, cantidad.value, precio.value);
         let arayProductos = []
-        arayProductos.push(nuevoProducto)
-        localStorage.setItem("Producto", JSON.stringify(arayProductos))
-        formulario.reset()
-        alertGuardado()
+        arayProductos.push(nuevoProducto);
+        localStorage.setItem("Producto", JSON.stringify(arayProductos));
+        formulario.reset();
+        alertGuardado();
         
     }else{
-        validarHtml(codigo)
-        validarHtml(producto)
-        validarHtml(cantidad)
-        validarHtml(precio)
+        validarHtml(codigo);
+        validarHtml(producto);
+        validarHtml(cantidad);
+        validarHtml(precio);
         const nuevoProducto = new Productos(id, codigo.value, producto.value, cantidad.value, precio.value);
-        productosEnStorage.push(nuevoProducto)
-        let enJASON = JSON.stringify(productosEnStorage)
-        localStorage.setItem("Producto", enJASON)
-        formulario.reset()
-        alertGuardado()
+        productosEnStorage.push(nuevoProducto);
+        let enJASON = JSON.stringify(productosEnStorage);
+        localStorage.setItem("Producto", enJASON);
+        formulario.reset();
+        alertGuardado();
          
     }
     
@@ -112,10 +112,41 @@ function agregarProductos(){
 
 /// tengo que recorrer lo que esta guardado en el storage para despues poder filtrar los productos
 
-function recorerStock(){
-    let db = JSON.parse(localStorage.getItem("Producto"))
-    let tdbody = document.getElementById("tdbody")
-    console.log(db)
+fetch("./data.json")
+.then((respuesta) => respuesta.json())
+.then((json) => console.log(json));
+
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then((respuesta) => respuesta.json())
+.then((json) => console.log(json))
+
+
+
+/*function recorerStock(){
+    ///let db = JSON.parse(localStorage.getItem("Producto"));
+    let tdbody = document.getElementById("tdbody");
+    ///console.log(db);
+
+    fetch("./data.json")
+    .then(respuesta => respuesta.json())
+    .then(productos => {
+        tdbody.innerHTML = ""
+        productos.forEach( db => {
+            let td = document.createElement("tr")
+            td.innerHTML = `
+            <td data-title="#"> ${productos.id}</td>
+            <td data-title="Codigo"> ${productos.codigo}</td>
+            <td data-title="Producto"> ${productos.producto}</td>
+            <td data-title="Cantidad"> ${productos.cantidad}</td>
+            <td data-title="Precio"> $ ${productos.precio}</td>
+            
+            `
+            tdbody.appendChild(td)
+        })
+    })
+
+    /*tdbody.innerHTML = ""
 
     if(db != false && db != null){
         db.forEach( db => {
@@ -133,9 +164,8 @@ function recorerStock(){
         return alertStorageVacio()
         
     }
-
    
-}
+}*/
 
 // JS Librerias
 
@@ -150,9 +180,9 @@ function alertStorageVacio(){
 }
 
 
-guardarProducto != null && guardarProducto.addEventListener("click", agregarProductos)
+guardarProducto != null && guardarProducto.addEventListener("click", agregarProductos);
 
-verStock != null && verStock.addEventListener("click", recorerStock)
+//verStock != null && verStock.addEventListener("click", recorerStock);
 
 
 
