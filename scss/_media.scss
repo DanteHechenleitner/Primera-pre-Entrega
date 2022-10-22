@@ -146,6 +146,23 @@
        
     }
 
+
+    .botonBorrar{
+        opacity: 40%;
+        //border-radius: 50%;
+        padding-top: 20px;
+        border: none;
+        filter: brightness(1.1);
+        mix-blend-mode: multiply;
+        transition: all 2s;
+        &:hover{
+            -webkit-transform: scale(1.05); transform: scale(1.05);
+            opacity: 100%;
+    
+        }
+       
+    }
+
     
     
     .formularioIngreso{
@@ -310,7 +327,24 @@
             }
         #no-more-tables tr {
                 border-bottom: 1px solid #ccc;
-            } 
+            }        
 
+
+
+
+            .botonBorrar{
+                opacity: 40%;
+                //border-radius: 50%;
+                border: none;
+                filter: brightness(1.1);
+                mix-blend-mode: multiply;
+                transition: all 2s;
+                &:hover{
+                    -webkit-transform: scale(1.05); transform: scale(1.05);
+                    opacity: 100%;
+            
+                }
+               
+            }
 
 }

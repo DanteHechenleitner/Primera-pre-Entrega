@@ -19,5 +19,19 @@
         "producto": "Torcha",
         "precio": 15,
         "cantidad": 8
+    },
+    {
+        "id": 4,
+        "codigo": "ED04",
+        "producto": "Pico de Contacto",
+        "precio": 1.5,
+        "cantidad": 78
+    },
+    {
+        "id": 5,
+        "codigo": "ED05",
+        "producto": "Vantage 322",
+        "precio": 1560,
+        "cantidad": 15
     }
 ]

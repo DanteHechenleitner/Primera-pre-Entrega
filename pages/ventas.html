@@ -143,16 +143,16 @@
                 <article class="col-md-6">
                     <form>
                         <div class="row mb-2 justify-content-center">
-                            <label for="inputEmail3" class="col-md-3 col-form-label">Cotizacion N°</label>
+                            <label for="cotizacion" class="col-md-3 col-form-label">Cotizacion N°</label>
                             <div class="col-md-4">
-                            <input type="text" class="form-control" id="inputEmail3">
+                            <label for="cotizacion" class="form-control col-form-label" id="cotizacion">0</label>
                             </div>
                         </div>
 
                         <div class="row mb-2 justify-content-center">
-                            <label for="inputPassword3" class="col-md-3 col-form-label">Fecha</label>
+                            <label for="email" class="col-md-3 col-form-label">Fecha</label>
                             <div class="col-md-4">
-                            <input type="datetime-local" class="form-control" id="inputPassword3">
+                            <input type="datetime-local" class="form-control">
                             </div>
                         </div>
 
@@ -171,18 +171,18 @@
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                          <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="clientes" placeholder="Password">
                                             <label for="floatingInput">Cliente</label>
                                           </div>
                                           <div class="form-floating">
-                                            <input type="number" class="form-control" id="floatingPassword" placeholder="Password">
+                                            <input type="number" class="form-control" id="cuit" placeholder="Password">
                                             <label for="floatingPassword">CUIT</label>
                                           </div>
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerar</button>
-                                      <button type="button" class="btn btn-primary">Guardar</button>
+                                      <button type="button" class="btn btn-primary" id="guardarCliente">Guardar</button>
                                     </div>
                                   </div>
                                 </div>
@@ -190,18 +190,21 @@
 
                             <div class="row mb-2 justify-content-center">
                                 <!--Clientes y CUIT -->
-                                <label for="inputEmail3" class="col-md-2 col-form-label">CLiente</label>
+                                <label for="cliente" class="col-md-2 col-form-label">Cliente</label>
                                 <button type="button" class="btn btn-outline-primary col-md-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     +
                                 </button>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="inputEmail3">
+                                <input type="text" class="form-control" id="clienteInput">
                                 </div>
                             </div>
                             <div class="row mb-2 justify-content-center">
                                 <label for="inputPassword3" class="col-md-3 col-form-label">CUIT</label>
                                 <div class="col-md-4">
-                                <input type="number" class="form-control" id="inputPassword3">
+                                
+                                <label for="cuit" class="form-control col-form-label"  id="cuitInput"> N° CUIT</label>
+                                <!--
+                                <input type="number" class="form-control" id="cuitInput">-->
                                 </div>
                             </div>  
 
@@ -212,12 +215,12 @@
 
     <!--Formulario de Productos-->
     <section class="container-fluid">
-        <article class="row col-md-12 ">
+        <article class="row col-md-12">
 
             <form class="row g-3 justify-content-center" id="formulario" >
-                <div class="col-md-3" >
-                  <label for="codigo" class="form-label">Codigo</label>
-                  <input  type="text" class="form-control" id="codigo"> 
+                <div class="col-md-2" >
+                  <label for="codigo"  class="form-label">Codigo</label>
+                  <input  type="text" class="form-control codigo" id="codigo"> 
                   <small></small>
                   
                 </div> 
@@ -228,33 +231,31 @@
                 </div>
                 <div class="col-md-1">
                   <label for="cantidad" class="form-label">Cantidad</label>
-                  <input type="number" class="form-control" id="cantidad">
+                  <input type="number" class="form-control" id="cantidad" min="0">
                   <small></small>
                 </div>
                 <div class="col-md-1">
                   <label for="precio" class="form-label">Precio</label>
-                  <input type="number" class="form-control" id="precio">
+                  <input type="number" class="form-control" id="precio" min="0">
                   <small></small>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1" id="contenedorIva">
                   <label for="IVA" class="form-label">IVA</label>
-                  <input type="number" class="form-control" id=>
+                  <select  class="form-control" id="iva">
+                    <option></option>
+                    <option>10.5</option>
+                    <option>21</option>
+                    <option>Exento</option>
+                  </select>
                 </div>
-                <div class="col-md-2">
-                  <label for="subtotal" class="form-label">Subtotal</label>
-                  <input type="password" class="form-control" id=>
+                <div class="col-md-2" id="total">
+                  <label for="total" class="form-label">Total</label>
+                  <label for="total" class="form-label form-control" id="valorTotal">0</label>
                 </div>
-                <div clas="col-md-1">
-                    <button type="button" class="btn btn-outline-primary col-md-1" data-bs-toggle="modal" data-bs-target="#exampleModa2">
-                        +
-                    </button>
-                </div>
-                <!--Se agrego el BTN-->
-                <div clas="col-md-1">
-                  <button type="button" class="btn btn-outline-primary col-md-1" id="guardar" >
-                      Guardar
-                  </button>
-                </div>
+
+                <div class="col-md-1"></div>
+                               
+                              
                 <!--Modal de Agregar de Productos-->
                 <div class="modal fade " id="exampleModa2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -280,17 +281,32 @@
                       </div>
                     </div>
                   </div>
+
+
                 
             </form>
-
+            <div style="padding: 5px" clas="col-md-12">
+              <div clas="col-md-1" style="padding: 5px">
+                <button type="button" class="btn btn-outline-primary col-md-1" data-bs-toggle="modal" data-bs-target="#exampleModa2">
+                  +
+                </button>
+                <button type="submit" class="btn btn-outline-primary col-md-1" id="guardar" >
+                  Guardar
+                </button>
+                <button type="button" class="btn btn-outline-primary col-md-1" id="agregarFila" >
+                  Agregar
+                </button>
+              </div>            
+            </div>
         </article>
     </section>
-    <!--Botones-->
+    <!--Botones
     <article style="padding: 15px">
         <input type="submit" value="ACEPTADA" id="btnAceptada">
         <input type="submit" value="PARCIALMENTE" id="btnAcP">
         <input type="submit" value="RECHAZADA" id="btnRechazada">
     </article>
+    -->
     <p class="pCotizacion">
         • Todos los precios están expresados en dólares estadounidenses (USD)
         <br>
@@ -323,7 +339,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.35/dist/sweetalert2.all.min.js"></script>
     <!-- Libreria JS -->
 
-    <script src="../clase11.js"></script>
+    <script src="../clientes.js"></script>
+    <script src="../ventas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

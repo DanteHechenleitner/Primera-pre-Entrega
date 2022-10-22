@@ -705,6 +705,18 @@ body {
     transform: scale(1.05);
     opacity: 100%;
   }
+  .botonBorrar {
+    opacity: 40%;
+    padding-top: 20px;
+    border: none;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    transition: all 2s;
+  }
+  .botonBorrar:hover {
+    transform: scale(1.05);
+    opacity: 100%;
+  }
   .formularioIngreso {
     font-family: "Overpass", sans-serif;
     width: 100%;
@@ -849,5 +861,16 @@ body {
   }
   #no-more-tables tr {
     border-bottom: 1px solid #ccc;
+  }
+  .botonBorrar {
+    opacity: 40%;
+    border: none;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    transition: all 2s;
+  }
+  .botonBorrar:hover {
+    transform: scale(1.05);
+    opacity: 100%;
   }
 }/*# sourceMappingURL=estilos.css.map */
